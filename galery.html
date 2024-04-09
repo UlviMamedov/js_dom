@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<body>
+
+<h1>Image Gallery</h1>
+
+<div id="gallery">
+</div>
+
+<a href="categories.html">Categories</a>
+
+<script>
+    const images = [{
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4gUDVzvSm16SUM7Y5OrWJlXHpxmgJYn30dhZmKd0hbg&s",
+        alt: "Cat 1"
+    }, {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTof7a3U0gr2Oi2SURxJmzt0SrA9JCghSrL-rvukczRJA&s",
+        alt: "Cat 2"
+    }, {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSioSt82840ssaCrgyyibmWkot0IeDnuGf6F5J3eLZ0ag&s",
+        alt: "Cat 3"
+    }, {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0EfdXgYd9d_S-ikvMP6pzGzRD8XIj1JTgPVZC0Wn4Nw&s",
+        alt: "Cat 4"
+    }, {
+        src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpxLyeHMQO_4k3Z81Mam8GgwTwc4UCXSJF0IJFnea8VQ&s",
+        alt: "Cat 5"
+    }];
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const gallery = document.getElementById('gallery');
+
+        images.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image.src;
+            imgElement.alt = image.alt;
+            gallery.appendChild(imgElement);
+        });
+    });
+
+</script>
+
+</body>
+</html>
