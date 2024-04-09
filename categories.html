@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+</head>
+<body>
+
+<ul id="categories">
+    <li class="item">
+        <h2>Books</h2>
+        <ul>
+            <li>Novel</li>
+            <li>Biography</li>
+            <li>Science Fiction</li>
+            <li>Fantasy</li>
+            <li>Mystery</li>
+        </ul>
+    </li>
+    <li class="item">
+        <h2>Music</h2>
+        <ul>
+            <li>Rock</li>
+            <li>Jazz</li>
+            <li>Classical</li>
+            <li>Pop</li>
+            <li>Electronic</li>
+        </ul>
+    </li>
+</ul>
+
+<a href="galery.html">Galery</a>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const categoriesList = document.getElementById('categories');
+        const categories = categoriesList.querySelectorAll('li.item');
+
+        console.log("Number of Categories: " + categories.length);
+        console.log("---");
+
+        categories.forEach(category => {
+            const categoryName = category.querySelector('h2').textContent;
+            const categoryElements = category.querySelectorAll('li').length;
+            const longestElement = Array.from(category.querySelectorAll('li'))
+                .reduce((a, b) => a.textContent.length > b.textContent.length ? a : b).textContent;
+            console.log("Category: " + categoryName);
+            console.log("Elements: " + categoryElements);
+            console.log("LongestElement: " + longestElement);
+            console.log("---");
+        });
+    });
+</script>
+
+</body>
+</html>
